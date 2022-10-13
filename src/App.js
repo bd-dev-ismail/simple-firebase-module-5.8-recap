@@ -1,23 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
 
+cnst
 function App() {
+ 
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {user.uid ? (
+        <button onClick={handalSignOut}>Sign Out</button>
+      ) : (
+        <>
+          <button onClick={handalSignInWithGoogle}>Sign In With Google</button>
+        </>
+      )}
+      {user.uid && (
+        <div>
+          <h3>User Name: {user.displayName}</h3>
+          <p>Email: {user.email}</p>
+          <img src={user.photoURL} alt="" />
+        </div>
+      )}
     </div>
   );
 }
